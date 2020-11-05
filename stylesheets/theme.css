@@ -1,3 +1,10 @@
+/* ONLY general styling here */
+
+
 :root{
     --background-purple: #592D5A;
+}
+
+body{
+    margin: 0;
 }

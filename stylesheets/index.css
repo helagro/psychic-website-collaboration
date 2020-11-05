@@ -1,0 +1,9 @@
+
+.section1{
+    background-color: red;
+    min-height: 40vh;
+}
+
+.section2{
+    background-color: var(--background-purple);
+}
