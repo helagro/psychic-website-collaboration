@@ -1,0 +1,21 @@
+
+body{
+    margin: 0;
+    text-align: center;
+}
+
+#msg_display{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.crystal_background{
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+   
+}
