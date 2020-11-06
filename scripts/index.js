@@ -6,7 +6,12 @@ const cardImages = ["hearts", "spades", "diamonds", "clubs"]
 const isDbug = true
 cardJSONs = []
 
+//ANCHOR inputs
 function main(){
+    addCards()
+}
+function drawCardsOnClick(){
+    delAllCards()
     addCards()
 }
 
@@ -54,8 +59,10 @@ function createCardElement(card){
             <img>
         </div>
     `
-
 }
 
+function delAllCards(){
+    cardHolderElement.innerHTML = ""
+}
 
 main()

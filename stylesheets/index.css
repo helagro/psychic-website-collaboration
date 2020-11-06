@@ -6,16 +6,32 @@
 
 .section2{
     background-color: var(--background-purple);
+    display: inline-block;
+    height: fit-content;
+    width: 100%;
+}
+
+#card_holder{
     column-gap: 6%;
     display: grid;
-    padding: 4% 0;
     grid-template-columns: 25vw 25vw 25vw;
     grid-template-rows: 35vw 35vw;
     justify-content: center;
+    padding: 4% 0;
     row-gap: 8%;
 }
 
 .card{
     background: white;
     border-radius: 1em;
+}
+
+.draw_cards_btn{
+    display: grid;
+    float: center;
+    font-size: 3vw;
+    height: 10%;
+    justify-self: center;
+    margin: 6% auto;
+    width: 40%;
 }
