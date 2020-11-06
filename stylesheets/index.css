@@ -6,5 +6,16 @@
 
 .section2{
     background-color: var(--background-purple);
+    column-gap: 6%;
     display: grid;
+    padding: 4% 0;
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 35vw 35vw;
+    justify-content: center;
+    row-gap: 8%;
+}
+
+.card{
+    background: white;
+    border-radius: 1em;
 }

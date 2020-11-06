@@ -1,3 +1,6 @@
+//ANCHOR views
+const cardHolderElement = document.getElementById("card_holder")
+
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
 const cardImages = ["hearts", "spades", "diamonds", "clubs"]
 const isDbug = true
@@ -24,7 +27,7 @@ function generateRandomCard(){
     const deno = getRandomElement(denos)
     const img = getRandomElement(cardImages)
 
-    return {deno, img}
+    return [deno, img]
 }
 
 function getRandomElement(array){
@@ -45,7 +48,13 @@ function isCardDuplicate(card){
 }
 
 function createCardElement(card){
-    
+    cardHolderElement.innerHTML += `
+        <div class="card">
+            <h4>${card[0]}<h4>
+            <img>
+        </div>
+    `
+
 }
 
 
