@@ -12,18 +12,25 @@
 }
 
 #card_holder{
-    column-gap: 6%;
+    align-content: baseline;
+    column-gap: 4%;
     display: grid;
-    grid-template-columns: 25vw 25vw 25vw;
-    grid-template-rows: 35vw 35vw;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 60vw;
+    justify-items: stretch;
+    margin: 0 auto;
+    max-height: 100vh;
+    max-width: 120vh;
+    overflow: hidden;
     padding: 4% 0;
-    row-gap: 8%;
+    row-gap: 4%;
+    width: 75vw;
 }
 
 .card{
     background: white;
-    border-radius: 1em;
+    border-radius: 8%;
 }
 
 .draw_cards_btn{
@@ -32,6 +39,6 @@
     font-size: 3vw;
     height: 10%;
     justify-self: center;
-    margin: 6% auto;
+    margin: 0 auto 6% auto;
     width: 40%;
 }
