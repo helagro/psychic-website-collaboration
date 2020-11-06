@@ -6,4 +6,5 @@
 
 .section2{
     background-color: var(--background-purple);
+    display: grid;
 }
