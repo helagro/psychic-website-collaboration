@@ -1,25 +1,22 @@
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
 const cardImages = ["hearts", "spades", "diamonds", "clubs"]
 const isDbug = true
+cardJSONs = []
 
 function main(){
     addCards()
 }
 
 function addCards(){
-    cardJSONs = []
-
     for (let i = 0; i < 6; i++){
         card = generateRandomCard()
-        cardJSON = JSON.stringify(card)
 
-        if(cardJSONs.includes(cardJSON)){ //Prevents same card from appearing twice
+        if(isCardDuplicate(card)){
             i--
             continue
         }
 
-        cardJSONs.push(cardJSON)
-        console.log(cardJSON)
+        createCardElement(card)
     }
 }
 
@@ -33,6 +30,22 @@ function generateRandomCard(){
 function getRandomElement(array){
     const randomNumInRange = Math.floor(Math.random()*array.length)
     return array[randomNumInRange]
+}
+
+function isCardDuplicate(card){
+    cardJSON = JSON.stringify(card)
+
+    if(cardJSONs.includes(cardJSON))
+        return true
+
+    cardJSONs.push(cardJSON)
+    console.log(cardJSON)
+
+    return false
+}
+
+function createCardElement(card){
+    
 }
 
 
