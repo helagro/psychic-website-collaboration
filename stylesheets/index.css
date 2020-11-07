@@ -12,13 +12,11 @@
 }
 
 #card_holder{
-    align-content: baseline;
     column-gap: 4%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 60vw;
-    justify-items: stretch;
     margin: 0 auto;
     max-height: 100vh;
     max-width: 120vh;
@@ -33,7 +31,7 @@
     border-radius: 8%;
 }
 
-.draw_cards_btn{
+#draw_cards_btn{
     display: grid;
     float: center;
     font-size: 3vw;

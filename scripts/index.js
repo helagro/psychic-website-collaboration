@@ -1,5 +1,6 @@
 //ANCHOR views
 const cardHolderElement = document.getElementById("card_holder")
+const drawCardsBtn = document.getElementById("draw_cards_btn")
 
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
 const cardImages = ["hearts", "spades", "diamonds", "clubs"]
@@ -11,8 +12,11 @@ function main(){
     addCards()
 }
 function drawCardsOnClick(){
+    drawCardsBtn.disabled = true
     delAllCards()
     addCards()
+    setTimeout(
+        function() {drawCardsBtn.disabled = false}, 1000);
 }
 
 function addCards(){
