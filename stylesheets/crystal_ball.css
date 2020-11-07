@@ -1,6 +1,7 @@
 
 body{
     text-align: center;
+    background-color: #0E0A0B;
 }
 
 #msg_display{
@@ -9,14 +10,18 @@ body{
     margin: auto;
     position: fixed; 
     right: 0; 
+    color: #eee;
 }
 
 .crystal_background{
     height: 100%;
-    left: 0;
     object-fit: cover;
-    opacity: .5;
+    opacity: .8;
     position: fixed;
     width: 100%;
     z-index: 2;
+    max-width: 160vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
