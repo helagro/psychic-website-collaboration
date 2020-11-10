@@ -1,20 +1,27 @@
 
 body{
     text-align: center;
+    background-color: #0E0A0B;
 }
 
 #msg_display{
-    left: 50%;
-    position: absolute;
-    top: 50%;
+    top: 48%;
+    left: 0;
+    margin: auto;
+    position: fixed; 
+    right: 0; 
+    color: #eee;
 }
 
 .crystal_background{
     height: 100%;
-    left: 0;
-    opacity: .5;
+    object-fit: cover;
+    opacity: .8;
     position: fixed;
     width: 100%;
     z-index: 2;
-   position: relative;
+    max-width: 160vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }

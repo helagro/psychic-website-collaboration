@@ -1,25 +1,38 @@
+<<<<<<< HEAD
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K"]
+=======
+//ANCHOR views
+const cardHolderElement = document.getElementById("card_holder")
+const drawCardsBtn = document.getElementById("draw_cards_btn")
+
+const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
+>>>>>>> 3bf69ca7b684fb29b7457ea635125c7cae5727e5
 const cardImages = ["hearts", "spades", "diamonds", "clubs"]
 const isDbug = true
+cardJSONs = []
 
+//ANCHOR inputs
 function main(){
     addCards()
 }
+function drawCardsOnClick(){
+    drawCardsBtn.disabled = true
+    delAllCards()
+    addCards()
+    setTimeout(
+        function() {drawCardsBtn.disabled = false}, 1000);
+}
 
 function addCards(){
-    cardJSONs = []
-
     for (let i = 0; i < 6; i++){
         card = generateRandomCard()
-        cardJSON = JSON.stringify(card)
 
-        if(cardJSONs.includes(cardJSON)){ //Prevents same card from appearing twice
+        if(isCardDuplicate(card)){
             i--
             continue
         }
 
-        cardJSONs.push(cardJSON)
-        console.log(cardJSON)
+        createCardElement(card)
     }
 }
 
@@ -27,7 +40,7 @@ function generateRandomCard(){
     const deno = getRandomElement(denos)
     const img = getRandomElement(cardImages)
 
-    return {deno, img}
+    return [deno, img]
 }
 
 function getRandomElement(array){
@@ -35,5 +48,29 @@ function getRandomElement(array){
     return array[randomNumInRange]
 }
 
+function isCardDuplicate(card){
+    cardJSON = JSON.stringify(card)
+
+    if(cardJSONs.includes(cardJSON))
+        return true
+
+    cardJSONs.push(cardJSON)
+    console.log(cardJSON)
+
+    return false
+}
+
+function createCardElement(card){
+    cardHolderElement.innerHTML += `
+        <div class="card">
+            <h4>${card[0]}<h4>
+            <img>
+        </div>
+    `
+}
+
+function delAllCards(){
+    cardHolderElement.innerHTML = ""
+}
 
 main()

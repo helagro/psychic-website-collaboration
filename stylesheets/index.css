@@ -6,4 +6,37 @@
 
 .section2{
     background-color: var(--background-purple);
+    display: inline-block;
+    height: fit-content;
+    width: 100%;
+}
+
+#card_holder{
+    column-gap: 4%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 60vw;
+    margin: 0 auto;
+    max-height: 100vh;
+    max-width: 120vh;
+    overflow: hidden;
+    padding: 4% 0;
+    row-gap: 4%;
+    width: 75vw;
+}
+
+.card{
+    background: white;
+    border-radius: 8%;
+}
+
+#draw_cards_btn{
+    display: grid;
+    float: center;
+    font-size: 3vw;
+    height: 10%;
+    justify-self: center;
+    margin: 0 auto 6% auto;
+    width: 40%;
 }

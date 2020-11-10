@@ -1,5 +1,5 @@
 
-const messages = ["True", "False", "Yes", "No", "You are worthless", "Great fortune awaits you"]
+const messages = ["True", "False", "Yes", "No", "Maybe", "Go for it"]
 const msgDisplay = document.getElementById("msg_display")
 
 
