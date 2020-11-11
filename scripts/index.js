@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K"]
-=======
 //ANCHOR views
 const cardHolderElement = document.getElementById("card_holder")
 const drawCardsBtn = document.getElementById("draw_cards_btn")
 
-const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"]
->>>>>>> 3bf69ca7b684fb29b7457ea635125c7cae5727e5
+const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K"]
 const cardImages = ["hearts", "spades", "diamonds", "clubs"]
 const isDbug = true
 cardJSONs = []
