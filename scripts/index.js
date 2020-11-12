@@ -1,5 +1,6 @@
 //ANCHOR views
 const cardHolderElement = document.getElementById("card_holder")
+const cardElements = cardHolderElement.children
 const drawCardsBtn = document.getElementById("draw_cards_btn")
 
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K"]
@@ -9,27 +10,25 @@ cardJSONs = []
 
 //ANCHOR inputs
 function main(){
-    addCards()
+    fillCards()
 }
 function drawCardsOnClick(){
-    drawCardsBtn.disabled = true
-    delAllCards()
-    addCards()
-    setTimeout(
-        function() {drawCardsBtn.disabled = false}, 1000);
+    fillCards()
 }
 
-function addCards(){
-    for (let i = 0; i < 6; i++){
-        card = generateRandomCard()
-
-        if(isCardDuplicate(card)){
-            i--
-            continue
-        }
-
-        createCardElement(card)
+function fillCards(){
+    for (cardElement of cardElements){
+        fillCard(cardElement)
     }
+}
+
+function fillCard(cardElement){
+    cardObj = generateRandomCard()
+    if (isCardDuplicate(cardObj)){
+        fillCard(cardElement)
+        return
+    }
+    fillCardElement(cardElement, cardObj)
 }
 
 function generateRandomCard(){
@@ -51,22 +50,19 @@ function isCardDuplicate(card){
         return true
 
     cardJSONs.push(cardJSON)
-    console.log(cardJSON)
 
     return false
 }
 
-function createCardElement(card){
-    cardHolderElement.innerHTML += `
-        <div class="card">
-            <h4>${card[0]}<h4>
-            <img>
-        </div>
-    `
-}
+function fillCardElement(cardElement, cardObj){
+    const denoELements = cardElement.getElementsByClassName("deno_display")
+    for(denoELement of denoELements){
+        denoELement.innerHTML = cardObj[0]
+    }
 
-function delAllCards(){
-    cardHolderElement.innerHTML = ""
+    const iconHolder = cardElement.getElementsByClassName("card_icon")[0]
+    iconHolder.src = "img/" + cardObj[1] + ".png"
+    console.log(iconHolder.src)
 }
 
 main()
