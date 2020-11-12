@@ -25,3 +25,13 @@ body{
     right: 0;
     margin: 0 auto;
 }
+#draw_cards_btn{
+    display: grid;
+    float: center;
+    font-size: 3vw;
+    height: 10%;
+    justify-self: center;
+    margin: 0 auto 6% auto;
+    width: 10%;
+    color: ;
+}
