@@ -24,14 +24,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 60vw;
+    height: 64vw;
     margin: 0 auto;
-    max-height: 100vh;
-    max-width: 120vh;
+    max-height: 80vh;
+    max-width: 100vh;
     overflow: hidden;
     padding: 4% 0;
     row-gap: 4%;
-    width: 75vw;
+    width: 80vw;
 }
 
 .card{
