@@ -30,17 +30,37 @@
     max-width: 100vh;
     overflow: hidden;
     padding: 4% 0;
-    row-gap: 4%;
+    row-gap: 6%;
     width: 80vw;
 }
 
-.card{
+.card_inner{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    width: auto;
+}
+.card:hover .card_inner {
+    transform: rotateY(180deg);
+}
+
+.card_front, .card_back{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+}
+
+/* ANCHOR Card front */
+.card_front{
     background: white;
     border-radius: 8%;
     display: grid;
     grid-template-columns: 2em auto 2em;
     grid-template-rows: 2em auto 2em;
     padding: 3%;
+    width: auto;
 }
 .deno_display{
     font-size: 2em;
@@ -55,10 +75,19 @@
     grid-column: 2;
     grid-row: 2;
     height: 24%;
+    margin: auto;
     position: relative;
     width: 35%;
-    margin: auto;
 }
+
+
+.card_back{
+    object-fit: cover;
+    transform: rotateY(180deg);
+    width: 100%;
+    background-color: #000; /*Prevents glitch*/
+}
+
 
 #draw_cards_btn{
     display: grid;
