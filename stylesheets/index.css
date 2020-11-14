@@ -45,6 +45,7 @@
 .deno_display{
     font-size: 2em;
     margin: 0;
+    text-align: center;
 }
 .deno_display:last-child{
     grid-column: 3;
@@ -53,7 +54,7 @@
 .card_icon{
     grid-column: 2;
     grid-row: 2;
-    height: 30%;
+    height: 24%;
     position: relative;
     width: 35%;
     margin: auto;

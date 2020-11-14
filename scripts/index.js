@@ -13,10 +13,12 @@ function main(){
     fillCards()
 }
 function drawCardsOnClick(){
+    console.log("clicked")
     fillCards()
 }
 
 function fillCards(){
+    cardJSONs.length = 0
     for (cardElement of cardElements){
         fillCard(cardElement)
     }
@@ -44,7 +46,7 @@ function getRandomElement(array){
 }
 
 function isCardDuplicate(card){
-    cardJSON = JSON.stringify(card)
+    const cardJSON = JSON.stringify(card)
 
     if(cardJSONs.includes(cardJSON))
         return true
@@ -62,7 +64,6 @@ function fillCardElement(cardElement, cardObj){
 
     const iconHolder = cardElement.getElementsByClassName("card_icon")[0]
     iconHolder.src = "img/" + cardObj[1] + ".png"
-    console.log(iconHolder.src)
 }
 
 main()
