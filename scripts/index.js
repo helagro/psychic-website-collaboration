@@ -13,15 +13,26 @@ function main(){
     fillCards()
 }
 function drawCardsOnClick(){
-    console.log("clicked")
     fillCards()
 }
 
-function fillCards(){
+async function fillCards(shouldReturnToRotation){
     cardJSONs.length = 0
     for (cardElement of cardElements){
+        rotateCard(cardElement, shouldReturnToRotation)
+        await sleep(200)
         fillCard(cardElement)
     }
+}
+
+function sleep(delay){
+    return new Promise((resolve) => setTimeout(resolve, delay))
+}
+
+function rotateCard(cardElement){
+    const cardInner = cardElement.getElementsByClassName("card_inner")[0]
+    cardInner.style.transform = "rotateY(0deg)"
+    setTimeout((cardInner) => cardInner.style.transform = "rotateY(180deg)", 400, cardInner)
 }
 
 function fillCard(cardElement){
