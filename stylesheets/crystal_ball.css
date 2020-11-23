@@ -2,6 +2,7 @@
 body{
     text-align: center;
     background-color: #0E0A0B;
+    font-family: 'Texturina', serif;
 }
 
 #msg_display{
@@ -25,13 +26,46 @@ body{
     right: 0;
     margin: 0 auto;
 }
+
 #draw_cards_btn{
-    display: grid;
-    float: center;
-    font-size: 3vw;
-    height: 10%;
-    justify-self: center;
-    margin: 0 auto 6% auto;
+    position: absolute;
+    padding: 1%;
     width: 10%;
-    color: ;
+    left: 45%;
+    top: 82%;
+    font-size: 2em;
+    z-index: 99;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0;
+  }
+  
+  li {
+    float: left;
+    list-style-type: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+    

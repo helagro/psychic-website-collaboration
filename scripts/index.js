@@ -1,5 +1,6 @@
 //ANCHOR views
 const cardHolderElement = document.getElementById("card_holder")
+const cardElements = cardHolderElement.children
 const drawCardsBtn = document.getElementById("draw_cards_btn")
 
 const denos = ["A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K"]
@@ -9,27 +10,38 @@ cardJSONs = []
 
 //ANCHOR inputs
 function main(){
-    addCards()
+    fillCards()
 }
 function drawCardsOnClick(){
-    drawCardsBtn.disabled = true
-    delAllCards()
-    addCards()
-    setTimeout(
-        function() {drawCardsBtn.disabled = false}, 1000);
+    fillCards()
 }
 
-function addCards(){
-    for (let i = 0; i < 6; i++){
-        card = generateRandomCard()
-
-        if(isCardDuplicate(card)){
-            i--
-            continue
-        }
-
-        createCardElement(card)
+async function fillCards(shouldReturnToRotation){
+    cardJSONs.length = 0
+    for (cardElement of cardElements){
+        rotateCard(cardElement, shouldReturnToRotation)
+        await sleep(200)
+        fillCard(cardElement)
     }
+}
+
+function sleep(delay){
+    return new Promise((resolve) => setTimeout(resolve, delay))
+}
+
+function rotateCard(cardElement){
+    const cardInner = cardElement.getElementsByClassName("card_inner")[0]
+    cardInner.style.transform = "rotateY(0deg)"
+    setTimeout((cardInner) => cardInner.style.transform = "rotateY(180deg)", 400, cardInner)
+}
+
+function fillCard(cardElement){
+    cardObj = generateRandomCard()
+    if (isCardDuplicate(cardObj)){
+        fillCard(cardElement)
+        return
+    }
+    fillCardElement(cardElement, cardObj)
 }
 
 function generateRandomCard(){
@@ -45,28 +57,24 @@ function getRandomElement(array){
 }
 
 function isCardDuplicate(card){
-    cardJSON = JSON.stringify(card)
+    const cardJSON = JSON.stringify(card)
 
     if(cardJSONs.includes(cardJSON))
         return true
 
     cardJSONs.push(cardJSON)
-    console.log(cardJSON)
 
     return false
 }
 
-function createCardElement(card){
-    cardHolderElement.innerHTML += `
-        <div class="card">
-            <h4>${card[0]}<h4>
-            <img>
-        </div>
-    `
-}
+function fillCardElement(cardElement, cardObj){
+    const denoELements = cardElement.getElementsByClassName("deno_display")
+    for(denoELement of denoELements){
+        denoELement.innerHTML = cardObj[0]
+    }
 
-function delAllCards(){
-    cardHolderElement.innerHTML = ""
+    const iconHolder = cardElement.getElementsByClassName("card_icon")[0]
+    iconHolder.src = "img/" + cardObj[1] + ".png"
 }
 
 main()

@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Texturina:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/theme.css">
     <link rel="stylesheet" href="stylesheets/crystal_ball.css">
 </head>
 <body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>  
     <h1 id="msg_display"></h1>
     <img src="img/crystal_ball.jpg" class="crystal_background">
 
 
     <script src="scripts/crystal_ball.js" async defer></script>
-    <button onclick="drawCardsOnClick()" id="draw_cards_btn">Start</button>
+    <button onclick="window.location.reload();" id="draw_cards_btn">Start</button>
 </body>
 </html>

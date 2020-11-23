@@ -1,7 +1,8 @@
 //TODO - 
-    ny backgrundsbild på section ett, den de tog har för låg upplösning
-    skaffa en bild för hjärter, spader... ikonerna (inte hela korten)
-    fixa menyn
-        sätta den under "SPÅKNAS"?
-    animate cards apear
-    get a nice font
+    skapa menyer på index.html och crystal_ball.html
+    ladda ner ett passand typsnitt
+    sätt backgrund på korten
+    generell styling
+    fixa backgrundbilden på section1, index.html   
+        (inte background stretch med mer)
+    lägg till en knapp på crystal_ball som genererar ett nytt medelande
