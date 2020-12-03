@@ -1,4 +1,7 @@
 /* ONLY general styling here */
+h1{
+    /*font-family: headerFont;*/
+}
 
 @font-face {
     font-family: headerFont;
