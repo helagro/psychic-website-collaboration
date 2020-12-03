@@ -1,9 +1,13 @@
+*{
+  font-family: headerFont;
+}
+
 
 .section1{
     background-image: url("https://miro.medium.com/max/4514/1*eyuCr9KOhADGM7V4-4Mt8Q.jpeg"); 
   background-position: center; 
   background-repeat: no-repeat; 
-  background-size: 100% 100%; 
+  
   height: 300px;
     
     min-height: 30vh; 
@@ -98,6 +102,9 @@
     justify-self: center;
     margin: 0 auto 6% auto;
     width: 40%;
+    color: purple;
+    border-radius: 50%;
+    
 }
 h1{
    color: #fff;
@@ -114,6 +121,12 @@ ul {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -120px;
+  
   }
   
   li {
@@ -127,14 +140,13 @@ ul {
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
+    background-color:#3339;
+    
     
   }
   
   li a:hover {
-    background-color: #111;
+    background-color:rgba(107, 0, 0, 0.2);
   }
-  
-  .active {
-    background-color:;
-  }
+
     

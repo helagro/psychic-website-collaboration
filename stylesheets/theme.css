@@ -1,5 +1,9 @@
 /* ONLY general styling here */
 
+@font-face {
+    font-family: headerFont;
+    src: url(../Brosia.otf);
+  }
 
 :root{
     --background-purple: #592D5A; /*#592D5A*/
