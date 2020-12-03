@@ -38,7 +38,6 @@
 }
 
 .card_inner{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.6s;
@@ -48,6 +47,8 @@
 .card_front, .card_back{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 8%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 100%;
     position: absolute;
 }
@@ -55,13 +56,13 @@
 /* ANCHOR Card front */
 .card_front{
     background: white;
-    border-radius: 8%;
     display: grid;
     grid-template-columns: 2em auto 2em;
     grid-template-rows: 2em auto 2em;
     padding: 3%;
     transform: rotateY(180deg);
     width: auto;
+    box-sizing: border-box;
 }
 .deno_display{
     font-size: 2em;
@@ -105,12 +106,12 @@ h1{
 }
 
 ul {
+    
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: #333;
-    position: webkit sticky; /* Safari */
+    padding: 0;
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
   }
@@ -121,11 +122,12 @@ ul {
   }
   
   li a {
-    display: block;
     color: white;
-    text-align: center;
+    display: block;
     padding: 14px 16px;
+    text-align: center;
     text-decoration: none;
+    
   }
   
   li a:hover {
@@ -133,6 +135,6 @@ ul {
   }
   
   .active {
-    background-color: #4CAF50;
+    background-color:;
   }
     
